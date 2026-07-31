@@ -16,15 +16,17 @@
     });
   }
 
-  var parallaxImg = document.querySelector('[data-parallax]');
-  if (parallaxImg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  var parallaxImgs = document.querySelectorAll('[data-parallax]');
+  if (parallaxImgs.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var parallaxTicking = false;
     var updateParallax = function () {
-      var rect = parallaxImg.parentElement.getBoundingClientRect();
-      var maxTravel = rect.height * 0.18;
-      var travel = (rect.top + rect.height / 2 - window.innerHeight / 2) * 0.1;
-      travel = Math.max(-maxTravel, Math.min(maxTravel, travel));
-      parallaxImg.style.transform = 'translate3d(0,' + travel.toFixed(1) + 'px,0)';
+      parallaxImgs.forEach(function (parallaxImg) {
+        var rect = parallaxImg.parentElement.getBoundingClientRect();
+        var maxTravel = rect.height * 0.18;
+        var travel = (rect.top + rect.height / 2 - window.innerHeight / 2) * 0.1;
+        travel = Math.max(-maxTravel, Math.min(maxTravel, travel));
+        parallaxImg.style.transform = 'translate3d(0,' + travel.toFixed(1) + 'px,0)';
+      });
       parallaxTicking = false;
     };
     var onParallaxScroll = function () {

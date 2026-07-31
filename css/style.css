@@ -179,6 +179,56 @@ header{position:sticky;top:0;background:var(--white);border-bottom:1px solid var
 .team-card h3{font-size:var(--h5);margin-bottom:4px}
 .team-card .role{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dark)}
 
+/* ===== Hero option tag (temporary comparison label — remove with the hero it labels) ===== */
+.hero-option-tag{position:absolute;top:24px;left:24px;z-index:3;background:var(--secondary);color:var(--black);font-family:'Oswald',sans-serif;font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:2px}
+.hero.has-option-tag .row{padding-top:calc(var(--sp-fluid) + 44px)}
+
+/* ===== Números / Stats band ===== */
+.stats-band{background:var(--black)}
+.stats-band .section-head h2{color:#fff;margin:0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.14)}
+.stat-item{padding:36px 28px;border-right:1px solid rgba(255,255,255,0.14)}
+.stat-item:last-child{border-right:0}
+.stat-item b{display:block;font-family:'Oswald',sans-serif;font-weight:500;font-size:clamp(38px,4.2vw,60px);color:var(--secondary);line-height:1;margin-bottom:14px}
+.stat-item span{display:block;font-size:14px;line-height:1.6;color:var(--body-light)}
+.stat-item--text{display:flex;align-items:center}
+.stat-item--text .stat-highlight{font-family:'Oswald',sans-serif;font-weight:400;font-size:16px;letter-spacing:.2px;line-height:1.5;color:#fff}
+
+@media(max-width:900px){
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-item{border-bottom:1px solid rgba(255,255,255,0.14)}
+  .stat-item:nth-child(2n){border-right:0}
+}
+@media(max-width:520px){
+  .stats-grid{grid-template-columns:1fr}
+  .stat-item{border-right:0 !important}
+}
+
+/* ===== Destaques (feature columns) ===== */
+.feature-col h3{margin-bottom:16px}
+.feature-col p{font-size:14px;line-height:1.8;margin-bottom:20px}
+
+/* ===== Áreas de Atuação (dark cards) ===== */
+.area-card{border-radius:var(--radius);padding:40px 32px;color:#fff;position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.area-card::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s ease;background:linear-gradient(160deg, rgba(255,255,255,0.10), transparent 60%);pointer-events:none}
+.area-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(36,31,34,0.35)}
+.area-card:hover::after{opacity:1}
+.area-card h3{color:#fff;font-size:var(--h4);margin-bottom:14px;position:relative}
+.area-card p{color:rgba(255,255,255,0.78);font-size:14px;line-height:1.7;margin-bottom:22px;position:relative}
+.area-card .link-underline{color:#fff;border-color:rgba(255,255,255,0.45);position:relative}
+.area-card .link-underline:hover{color:var(--secondary);border-color:var(--secondary)}
+.area-card:nth-child(1){background:linear-gradient(155deg,#3a3238 0%, var(--black) 100%)}
+.area-card:nth-child(2){background:linear-gradient(155deg,#5b5048 0%, #362f2a 100%)}
+.area-card:nth-child(3){background:linear-gradient(155deg,var(--primary) 0%, #4a4147 100%)}
+.area-card:nth-child(4){background:linear-gradient(155deg,var(--gold-dark) 0%, #4a3c2c 100%)}
+.area-card:nth-child(5){background:linear-gradient(155deg,#57504c 0%, #2c2724 100%)}
+.area-card:nth-child(6){background:linear-gradient(155deg,#241F22 0%, #4a4147 100%)}
+
+/* ===== Nossa Equipe (teaser) ===== */
+.team-teaser{background:var(--bg-light)}
+.team-teaser-inner{text-align:center}
+.team-teaser-inner .section-head{margin-bottom:32px}
+
 /* ===== CTA ===== */
 .cta{position:relative;padding:calc(var(--sp-fluid)*1.2) 0;text-align:center;background:var(--black);overflow:hidden}
 .cta::before{content:"";position:absolute;inset:0;background:
