@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Jost:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-home">
 
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
@@ -65,15 +65,22 @@
           <a class="btn btn-gold" href="quem-somos.html">Conheça o escritório</a>
         </div>
       </div>
+      <span class="hero-slider-note">Duas versões de título em teste — escolha uma</span>
       <div class="hero-slider-controls">
-        <span class="hero-slider-note">Duas versões de título em teste — escolha uma</span>
+        <button class="hero-nav-btn prev" type="button" aria-label="Versão anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4l-8 8 8 8"/></svg>
+        </button>
         <div class="hero-slider-dots" role="tablist" aria-label="Versões do título">
-          <button class="dot is-active" type="button" data-slide="0" role="tab" aria-selected="true" aria-label="Versão 1"></button>
-          <button class="dot" type="button" data-slide="1" role="tab" aria-selected="false" aria-label="Versão 2"></button>
+          <button class="dot is-active" type="button" data-slide="0" role="tab" aria-selected="true" aria-label="Versão 1"><span class="dot-fill"></span></button>
+          <button class="dot" type="button" data-slide="1" role="tab" aria-selected="false" aria-label="Versão 2"><span class="dot-fill"></span></button>
         </div>
+        <button class="hero-nav-btn next" type="button" aria-label="Próxima versão">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l8 8-8 8"/></svg>
+        </button>
       </div>
     </div>
   </div>
+  <a href="#destaques" class="hero-scroll-cue" aria-label="Rolar para o conteúdo"><span></span></a>
 </section>
 
 <!-- ===== NÚMEROS ===== -->
