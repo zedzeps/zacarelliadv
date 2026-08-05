@@ -40,6 +40,43 @@
     updateParallax();
   }
 
+  var heroSlider = document.querySelector('.hero-slider');
+  if (heroSlider) {
+    var slides = heroSlider.querySelectorAll('.hero-slide');
+    var dots = document.querySelectorAll('.hero-slider-dots .dot');
+    var current = 0;
+    var autoplayId = null;
+
+    var goToSlide = function (index) {
+      current = index;
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('is-active', i === index);
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === index);
+        dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+      });
+    };
+
+    var restartAutoplay = function () {
+      if (autoplayId) window.clearInterval(autoplayId);
+      if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        autoplayId = window.setInterval(function () {
+          goToSlide((current + 1) % slides.length);
+        }, 7000);
+      }
+    };
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        goToSlide(i);
+        restartAutoplay();
+      });
+    });
+
+    restartAutoplay();
+  }
+
   var revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {
     document.documentElement.classList.add('js-reveal');
