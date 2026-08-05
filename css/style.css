@@ -103,7 +103,7 @@ header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);
 .hero-copy p.lead{color:var(--body-light);max-width:460px;margin-bottom:28px}
 .hero-copy .rule{margin-bottom:36px}
 
-/* Larger, more confident hero type on pages that use the slider (home.html) */
+/* Larger, more confident hero type on pages that use the slider (index.html) */
 .page-home .hero .row{min-height:680px}
 .page-home .hero-copy .eyebrow{margin-bottom:22px}
 .page-home .hero-copy h1{max-width:660px;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.3px;line-height:1.15;margin-bottom:26px}
