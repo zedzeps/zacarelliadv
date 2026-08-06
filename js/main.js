@@ -98,6 +98,24 @@
     restartAutoplay();
   }
 
+  var accItems = document.querySelectorAll('.area-acc-item');
+  if (accItems.length) {
+    accItems.forEach(function (item) {
+      var accBtn = item.querySelector('.area-acc-header');
+      accBtn.addEventListener('click', function () {
+        var wasOpen = item.classList.contains('is-open');
+        accItems.forEach(function (i) {
+          i.classList.remove('is-open');
+          i.querySelector('.area-acc-header').setAttribute('aria-expanded', 'false');
+        });
+        if (!wasOpen) {
+          item.classList.add('is-open');
+          accBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
   var header = document.querySelector('header');
   if (header) {
     var onHeaderScroll = function () {
