@@ -138,6 +138,16 @@
     updateTeamNav();
   }
 
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var success = document.getElementById('contactFormSuccess');
+      contactForm.style.display = 'none';
+      if (success) success.style.display = 'block';
+    });
+  }
+
   var header = document.querySelector('header');
   if (header) {
     var onHeaderScroll = function () {
@@ -162,11 +172,11 @@
       { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
     );
     revealEls.forEach(function (el) { observer.observe(el); });
-    // Safety net: if anything is still hidden after load (e.g. above-fold
-    // on first paint or an observer edge case), reveal it so content is
-    // never permanently invisible.
+    // Safety net: if anything is still hidden shortly after load (e.g. a
+    // screenshot/preview tool that never scrolls, or an observer edge
+    // case), reveal it so content is never left invisible.
     window.setTimeout(function () {
       revealEls.forEach(function (el) { el.classList.add('in'); });
-    }, 4000);
+    }, 900);
   }
 })();

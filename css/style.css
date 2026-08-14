@@ -64,6 +64,8 @@ ul{list-style:none}
 .btn-outline-light:hover{background:var(--secondary);color:var(--black);border-color:var(--secondary)}
 .btn-gold{background:var(--secondary);color:var(--black);border:1px solid var(--secondary)}
 .btn-gold:hover{background:#fff;border-color:#fff;box-shadow:0 10px 28px rgba(0,0,0,0.25);transform:translateY(-2px)}
+.btn-outline-dark{background:transparent;color:var(--heading);border:1px solid var(--border-dark)}
+.btn-outline-dark:hover{background:var(--heading);color:#fff;border-color:var(--heading)}
 .btn:active{transform:scale(.97)}
 
 .link-underline{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--primary);display:inline-block;border-bottom:1px solid var(--secondary);padding-bottom:3px;transition:color .25s var(--ease),border-color .25s var(--ease),letter-spacing .25s var(--ease)}
@@ -316,6 +318,25 @@ header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);
 /* ===== Nossa Equipe ===== */
 .team-teaser{background:var(--bg-light)}
 
+/* ===== Notícias (masonry placeholder, mescla blog + mídia) ===== */
+.news-masonry{column-count:3;column-gap:var(--grid-gap)}
+.news-card{display:block;break-inside:avoid;margin-bottom:var(--grid-gap);border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;background:var(--white);transition:box-shadow .35s var(--ease),transform .35s var(--ease)}
+.news-card:hover{box-shadow:0 16px 36px var(--shadow);transform:translateY(-4px)}
+.news-thumb{position:relative;background:linear-gradient(150deg, var(--bg-light) 0%, #ece3d6 100%);display:flex;align-items:center;justify-content:center}
+.news-thumb::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%, rgba(104,93,99,0.10), transparent 55%)}
+.news-thumb img{width:28%;opacity:.5;position:relative}
+.news-tag{position:absolute;top:16px;left:16px;z-index:1;font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;border-radius:20px;color:#fff}
+.news-tag--blog{background:var(--primary)}
+.news-tag--midia{background:var(--gold-dark)}
+.news-body{padding:26px 28px 30px}
+.news-date{display:block;font-size:12px;color:var(--body);letter-spacing:.5px;margin-bottom:10px}
+.news-body h3{font-size:var(--h5);margin-bottom:10px;line-height:1.35}
+.news-body p{font-size:14px;line-height:1.7;margin-bottom:16px}
+.news-more{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--primary);border-bottom:1px solid var(--secondary);padding-bottom:3px;transition:color .25s var(--ease)}
+.news-more:hover{color:var(--gold-dark)}
+@media(max-width:900px){.news-masonry{column-count:2}}
+@media(max-width:640px){.news-masonry{column-count:1}}
+
 /* ===== CTA (full-bleed parallax background) ===== */
 .cta{position:relative;padding:calc(var(--sp-fluid)*1.2) 0;text-align:center;background:var(--black);overflow:hidden}
 .cta-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
@@ -357,6 +378,52 @@ footer li::before{content:"—";color:var(--secondary);margin-right:10px}
 @media(max-width:520px){
   .foot-grid{grid-template-columns:1fr}
 }
+
+/* ===== Reconhecimento (Quem Somos — selo de conquista) ===== */
+.recognition{background:var(--bg-light)}
+.recognition-panel{max-width:760px;margin:0 auto;text-align:center;background:var(--white);border:1px solid var(--border-dark);border-radius:var(--radius-lg);padding:clamp(40px,6vw,64px) clamp(24px,6vw,48px)}
+.recognition-seal{width:92px;height:92px;margin:0 auto 28px;border-radius:50%;border:2px solid var(--gold-dark);display:flex;align-items:center;justify-content:center;position:relative}
+.recognition-seal::before{content:"";position:absolute;inset:6px;border:1px solid rgba(138,115,80,0.4);border-radius:50%}
+.recognition-seal svg{width:36px;height:36px;color:var(--gold-dark)}
+.recognition-figure{font-family:'Oswald',sans-serif;font-weight:500;font-size:clamp(32px,4vw,48px);color:var(--heading);margin-bottom:14px}
+.recognition-panel p{max-width:540px;margin:0 auto;font-size:15px;line-height:1.8}
+.recognition-note{margin-top:22px;font-size:12px;letter-spacing:.5px;color:var(--body);opacity:.65}
+
+/* ===== Áreas de Atuação — página de detalhe ===== */
+.areas-detail{border-top:1px solid var(--border-dark)}
+.area-detail-item{padding:clamp(40px,6vw,64px) 0;border-bottom:1px solid var(--border-dark);display:grid;grid-template-columns:120px 1fr;gap:40px;scroll-margin-top:100px}
+.area-detail-num{font-family:'Oswald',sans-serif;font-weight:500;font-size:16px;color:var(--gold-dark);opacity:.7}
+.area-detail-item h2{margin-bottom:18px}
+.area-detail-item p{max-width:680px;margin-bottom:16px;font-size:15px;line-height:1.85}
+.area-detail-item p:last-of-type{margin-bottom:0}
+@media(max-width:700px){.area-detail-item{grid-template-columns:1fr;gap:10px}}
+
+/* ===== Equipe — página completa (fotos, mini bio, área) ===== */
+.team-card .bio{font-size:14px;line-height:1.75;color:var(--body);margin-top:14px}
+.team-card .role + .bio{margin-top:14px}
+
+/* ===== Contato ===== */
+.contact-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:var(--grid-gap);align-items:start}
+.form-field{margin-bottom:22px}
+.form-field label{display:block;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--heading);margin-bottom:10px}
+.form-field input,.form-field textarea{width:100%;border:1px solid var(--border-dark);border-radius:var(--radius);padding:14px 16px;font-family:'Jost',sans-serif;font-size:15px;color:var(--heading);background:var(--white);transition:border-color .25s var(--ease)}
+.form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--gold-dark)}
+.form-field textarea{resize:vertical;min-height:140px}
+.contact-form-note{font-size:13px;color:var(--body);margin-top:-6px;margin-bottom:26px}
+.contact-form-success{display:none;border:1px solid var(--border-dark);border-radius:var(--radius);padding:32px;text-align:center}
+.contact-form-success h3{margin-bottom:10px}
+.contact-info-card{background:var(--bg-light);border-radius:var(--radius-lg);padding:clamp(32px,4vw,44px)}
+.contact-info-card h3{font-size:var(--h5);margin-bottom:24px}
+.contact-info-row{display:flex;gap:16px;margin-bottom:24px}
+.contact-info-row:last-of-type{margin-bottom:0}
+.contact-info-row svg{flex:none;width:20px;height:20px;color:var(--gold-dark);margin-top:2px}
+.contact-info-row div{font-size:14px;line-height:1.7}
+.contact-info-row a{color:inherit;text-decoration:none}
+.contact-info-row a:hover{color:var(--gold-dark)}
+.contact-info-btns{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.contact-info-btns .btn{display:flex;align-items:center;justify-content:center;gap:10px}
+.contact-info-btns svg{width:16px;height:16px}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
 
 /* ===== Scroll reveal (progressive enhancement: visible by default, animates only once JS confirms observer support) ===== */
 .js-reveal .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
