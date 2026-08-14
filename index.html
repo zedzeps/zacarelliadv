@@ -261,7 +261,8 @@
       <h2>Nossa equipe</h2>
       <p>Experiência, conhecimento técnico e atuação especializada reunidos em uma equipe comprometida com a excelência jurídica.</p>
     </div>
-    <div class="grid grid-4">
+    <div class="team-slider">
+    <div class="team-track" id="teamTrack">
       <div class="team-card reveal">
         <div class="team-photo">
           <img src="assets/img/team/zacarelli.png" alt="Aristides Zacarelli Neto" loading="lazy">
@@ -307,6 +308,15 @@
         <p class="role">Advogado Associado · Compliance</p>
       </div>
     </div>
+    <div class="team-slider-controls">
+      <button class="team-nav prev" type="button" aria-label="Ver membros anteriores">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="team-nav next" type="button" aria-label="Ver próximos membros">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    </div>
     <div class="reveal" style="text-align:center;margin-top:48px">
       <a class="btn btn-primary" href="equipe.html">Conheça os profissionais</a>
     </div>
@@ -315,6 +325,10 @@
 
 <!-- ===== CTA FINAL ===== -->
 <section class="cta dark">
+  <div class="cta-bg" aria-hidden="true">
+    <!-- TODO: substituir por foto real de sala de reunião quando disponível -->
+    <img src="assets/img/office-detail.jpg" alt="" data-parallax>
+  </div>
   <div class="row">
     <h2>Conte com uma assessoria especializada</h2>
     <p class="lead">Estamos preparados para atuar em situações que exigem experiência, estratégia e atuação personalizada.</p>

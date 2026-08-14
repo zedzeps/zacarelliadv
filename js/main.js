@@ -116,6 +116,28 @@
     });
   }
 
+  var teamTrack = document.getElementById('teamTrack');
+  var teamPrev = document.querySelector('.team-nav.prev');
+  var teamNext = document.querySelector('.team-nav.next');
+  if (teamTrack && teamPrev && teamNext) {
+    var scrollTeam = function (dir) {
+      var card = teamTrack.querySelector('.team-card');
+      if (!card) return;
+      var gap = parseFloat(window.getComputedStyle(teamTrack).columnGap) || 0;
+      teamTrack.scrollBy({ left: (card.getBoundingClientRect().width + gap) * dir, behavior: 'smooth' });
+    };
+    teamPrev.addEventListener('click', function () { scrollTeam(-1); });
+    teamNext.addEventListener('click', function () { scrollTeam(1); });
+    var updateTeamNav = function () {
+      var max = teamTrack.scrollWidth - teamTrack.clientWidth - 1;
+      teamPrev.disabled = teamTrack.scrollLeft <= 0;
+      teamNext.disabled = teamTrack.scrollLeft >= max;
+    };
+    teamTrack.addEventListener('scroll', updateTeamNav, { passive: true });
+    window.addEventListener('resize', updateTeamNav);
+    updateTeamNav();
+  }
+
   var header = document.querySelector('header');
   if (header) {
     var onHeaderScroll = function () {

@@ -151,7 +151,7 @@ header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);
 }
 
 @media(prefers-reduced-motion:reduce){
-  .hero-bg img{transform:none !important}
+  .hero-bg img,.cta-bg img{transform:none !important}
   .hero-scroll-cue span{animation:none}
   .dot-fill.is-filling{animation:none;transform:scaleX(1)}
 }
@@ -229,6 +229,18 @@ header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);
 .team-card h3{font-size:var(--h5);margin-bottom:4px}
 .team-card .role{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dark)}
 
+.team-slider{position:relative;margin-top:8px}
+.team-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*var(--grid-gap))/4);gap:var(--grid-gap);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding-bottom:2px;scrollbar-width:none}
+.team-track::-webkit-scrollbar{display:none}
+.team-track .team-card{scroll-snap-align:start;min-width:0}
+.team-slider-controls{display:flex;justify-content:center;gap:14px;margin-top:36px}
+.team-nav{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--border-dark);background:none;color:var(--heading);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease)}
+.team-nav svg{width:18px;height:18px}
+.team-nav:hover{background:var(--heading);border-color:var(--heading);color:#fff}
+.team-nav:disabled{opacity:.3;cursor:default;pointer-events:none}
+@media(max-width:900px){.team-track{grid-auto-columns:calc((100% - var(--grid-gap))/2)}}
+@media(max-width:640px){.team-track{grid-auto-columns:calc(100% - 40px)}}
+
 /* ===== Números / Stats band ===== */
 .stats-band{background:var(--black)}
 .stats-band .section-head h2{color:#fff;margin:0}
@@ -303,17 +315,17 @@ header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);
 
 /* ===== Nossa Equipe ===== */
 .team-teaser{background:var(--bg-light)}
-.team-teaser .grid-4{margin-top:8px}
 
-/* ===== CTA ===== */
+/* ===== CTA (full-bleed parallax background) ===== */
 .cta{position:relative;padding:calc(var(--sp-fluid)*1.2) 0;text-align:center;background:var(--black);overflow:hidden}
-.cta::before{content:"";position:absolute;inset:0;background:
-  radial-gradient(circle at 15% 20%, rgba(104,93,99,0.55), transparent 45%),
-  radial-gradient(circle at 85% 80%, rgba(206,184,155,0.14), transparent 50%),
-  linear-gradient(155deg, #3a3238 0%, #1a1618 100%)}
-.cta::after{content:"";position:absolute;inset:0;background:
-  repeating-linear-gradient(100deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 64px)}
-.cta .row{position:relative;z-index:1}
+.cta-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.cta-bg img{position:absolute;top:-25%;left:-10%;width:120%;height:150%;object-fit:cover;will-change:transform}
+.cta::before{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(180deg, rgba(20,17,19,0.75) 0%, rgba(20,17,19,0.58) 55%, rgba(20,17,19,0.8) 100%),
+  radial-gradient(ellipse at 50% 25%, rgba(206,184,155,0.14), transparent 60%)}
+.cta::after{content:"";position:absolute;inset:0;z-index:1;background:
+  repeating-linear-gradient(100deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 64px)}
+.cta .row{position:relative;z-index:2}
 .cta .eyebrow{color:var(--secondary)}
 .cta h2{color:#fff;max-width:640px;margin:14px auto 16px}
 .cta p.lead{color:var(--body-light);max-width:480px;margin:0 auto 36px}
