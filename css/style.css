@@ -228,8 +228,8 @@ header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);
 .team-social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s}
 .team-social a:hover{background:var(--secondary);border-color:var(--secondary);color:var(--black)}
 .team-social svg{width:15px;height:15px;fill:currentColor}
-.team-card h3{font-size:var(--h5);margin-bottom:4px;min-height:3.9em}
-.team-card .role{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dark)}
+.team-card h3{font-size:var(--h5)}
+.team-card .role{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:6px}
 
 .team-slider{position:relative;margin-top:8px}
 .team-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*var(--grid-gap))/4);gap:var(--grid-gap);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding-bottom:2px;scrollbar-width:none}
