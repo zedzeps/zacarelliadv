@@ -98,20 +98,26 @@
     restartAutoplay();
   }
 
-  var accItems = document.querySelectorAll('.area-acc-item');
-  if (accItems.length) {
-    accItems.forEach(function (item) {
-      var accBtn = item.querySelector('.area-acc-header');
-      accBtn.addEventListener('click', function () {
-        var wasOpen = item.classList.contains('is-open');
-        accItems.forEach(function (i) {
-          i.classList.remove('is-open');
-          i.querySelector('.area-acc-header').setAttribute('aria-expanded', 'false');
+  // Áreas de Atuação: menu de títulos + painel. Exatamente um item fica
+  // sempre ativo, então clicar no ativo não faz nada.
+  var areaTabs = document.querySelectorAll('.area-tab-btn');
+  if (areaTabs.length) {
+    var panelOf = function (btn) {
+      return document.getElementById(btn.getAttribute('aria-controls'));
+    };
+    areaTabs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (btn.classList.contains('is-active')) return;
+        areaTabs.forEach(function (other) {
+          other.classList.remove('is-active');
+          other.setAttribute('aria-expanded', 'false');
+          var otherPanel = panelOf(other);
+          if (otherPanel) otherPanel.classList.remove('is-active');
         });
-        if (!wasOpen) {
-          item.classList.add('is-open');
-          accBtn.setAttribute('aria-expanded', 'true');
-        }
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-expanded', 'true');
+        var panel = panelOf(btn);
+        if (panel) panel.classList.add('is-active');
       });
     });
   }

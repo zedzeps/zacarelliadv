@@ -146,108 +146,84 @@
   </div>
 </section>
 
-<!-- ===== ÁREAS DE ATUAÇÃO — lista leve com linhas divisórias ===== -->
+<!-- ===== ÁREAS DE ATUAÇÃO — menu lateral + painel de conteúdo ===== -->
 <section class="section alt" id="atuacao">
   <div class="row">
     <div class="section-head reveal">
       <p class="eyebrow">Áreas de Atuação</p>
       <h2>Onde nossa experiência faz diferença</h2>
     </div>
-    <div class="areas-accordion">
-      <div class="area-acc-item is-open reveal">
-        <button class="area-acc-header" aria-expanded="true">
-          <span class="area-acc-num">01</span>
+    <div class="areas-tabs">
+      <div class="area-tab">
+        <button class="area-tab-btn is-active reveal" id="tab-defesa-criminal" aria-controls="painel-defesa-criminal" aria-expanded="true">
+          <span class="area-tab-num">01</span>
+          <span class="area-tab-title">Defesa Criminal</span>
+        </button>
+        <div class="area-tab-panel is-active" id="painel-defesa-criminal" role="region" aria-labelledby="tab-defesa-criminal">
+          <span class="area-tab-ghost" aria-hidden="true">01</span>
           <h3>Defesa Criminal</h3>
-          <svg class="area-acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="area-acc-panel">
-          <div class="area-acc-panel-inner">
-            <div class="area-acc-panel-content">
-              <span class="area-acc-ghost" aria-hidden="true">01</span>
-              <p>Atuação estratégica em investigações, operações policiais, ações penais e recursos.</p>
-              <a class="area-row-link" href="areas-de-atuacao.html#defesa-criminal">Saiba mais<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-</div>
+          <p>Atuação estratégica em investigações, operações policiais, ações penais e recursos.</p>
+          <a class="btn btn-outline-dark" href="areas-de-atuacao.html#defesa-criminal">Saiba mais</a>
         </div>
       </div>
-      <div class="area-acc-item reveal" style="transition-delay:40ms">
-        <button class="area-acc-header" aria-expanded="false">
-          <span class="area-acc-num">02</span>
+      <div class="area-tab">
+        <button class="area-tab-btn reveal" style="transition-delay:50ms" id="tab-vitimas-seguros" aria-controls="painel-vitimas-seguros" aria-expanded="false">
+          <span class="area-tab-num">02</span>
+          <span class="area-tab-title">Representação de Vítimas e Mercado de Seguros</span>
+        </button>
+        <div class="area-tab-panel" id="painel-vitimas-seguros" role="region" aria-labelledby="tab-vitimas-seguros">
+          <span class="area-tab-ghost" aria-hidden="true">02</span>
           <h3>Representação de Vítimas e Mercado de Seguros</h3>
-          <svg class="area-acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="area-acc-panel">
-          <div class="area-acc-panel-inner">
-            <div class="area-acc-panel-content">
-              <span class="area-acc-ghost" aria-hidden="true">02</span>
-              <p>Proteção de interesses patrimoniais, institucionais e reputacionais em casos criminais.</p>
-              <a class="area-row-link" href="areas-de-atuacao.html#vitimas-seguros">Saiba mais<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-</div>
+          <p>Proteção de interesses patrimoniais, institucionais e reputacionais em casos criminais.</p>
+          <a class="btn btn-outline-dark" href="areas-de-atuacao.html#vitimas-seguros">Saiba mais</a>
         </div>
       </div>
-      <div class="area-acc-item reveal" style="transition-delay:80ms">
-        <button class="area-acc-header" aria-expanded="false">
-          <span class="area-acc-num">03</span>
+      <div class="area-tab">
+        <button class="area-tab-btn reveal" style="transition-delay:100ms" id="tab-investigacoes-corporativas" aria-controls="painel-investigacoes-corporativas" aria-expanded="false">
+          <span class="area-tab-num">03</span>
+          <span class="area-tab-title">Investigações Corporativas</span>
+        </button>
+        <div class="area-tab-panel" id="painel-investigacoes-corporativas" role="region" aria-labelledby="tab-investigacoes-corporativas">
+          <span class="area-tab-ghost" aria-hidden="true">03</span>
           <h3>Investigações Corporativas</h3>
-          <svg class="area-acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="area-acc-panel">
-          <div class="area-acc-panel-inner">
-            <div class="area-acc-panel-content">
-              <span class="area-acc-ghost" aria-hidden="true">03</span>
-              <p>Apuração interna de fatos sensíveis com independência, confidencialidade e segurança jurídica.</p>
-              <a class="area-row-link" href="areas-de-atuacao.html#investigacoes-corporativas">Saiba mais<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-</div>
+          <p>Apuração interna de fatos sensíveis com independência, confidencialidade e segurança jurídica.</p>
+          <a class="btn btn-outline-dark" href="areas-de-atuacao.html#investigacoes-corporativas">Saiba mais</a>
         </div>
       </div>
-      <div class="area-acc-item reveal" style="transition-delay:120ms">
-        <button class="area-acc-header" aria-expanded="false">
-          <span class="area-acc-num">04</span>
+      <div class="area-tab">
+        <button class="area-tab-btn reveal" style="transition-delay:150ms" id="tab-compliance" aria-controls="painel-compliance" aria-expanded="false">
+          <span class="area-tab-num">04</span>
+          <span class="area-tab-title">Compliance, Integridade e Consultoria Preventiva</span>
+        </button>
+        <div class="area-tab-panel" id="painel-compliance" role="region" aria-labelledby="tab-compliance">
+          <span class="area-tab-ghost" aria-hidden="true">04</span>
           <h3>Compliance, Integridade e Consultoria Preventiva</h3>
-          <svg class="area-acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="area-acc-panel">
-          <div class="area-acc-panel-inner">
-            <div class="area-acc-panel-content">
-              <span class="area-acc-ghost" aria-hidden="true">04</span>
-              <p>Prevenção de riscos penais e fortalecimento de programas de integridade.</p>
-              <a class="area-row-link" href="areas-de-atuacao.html#compliance">Saiba mais<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-</div>
+          <p>Prevenção de riscos penais e fortalecimento de programas de integridade.</p>
+          <a class="btn btn-outline-dark" href="areas-de-atuacao.html#compliance">Saiba mais</a>
         </div>
       </div>
-      <div class="area-acc-item reveal" style="transition-delay:160ms">
-        <button class="area-acc-header" aria-expanded="false">
-          <span class="area-acc-num">05</span>
+      <div class="area-tab">
+        <button class="area-tab-btn reveal" style="transition-delay:200ms" id="tab-contencioso-administrativo" aria-controls="painel-contencioso-administrativo" aria-expanded="false">
+          <span class="area-tab-num">05</span>
+          <span class="area-tab-title">Contencioso Administrativo Sancionador</span>
+        </button>
+        <div class="area-tab-panel" id="painel-contencioso-administrativo" role="region" aria-labelledby="tab-contencioso-administrativo">
+          <span class="area-tab-ghost" aria-hidden="true">05</span>
           <h3>Contencioso Administrativo Sancionador</h3>
-          <svg class="area-acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="area-acc-panel">
-          <div class="area-acc-panel-inner">
-            <div class="area-acc-panel-content">
-              <span class="area-acc-ghost" aria-hidden="true">05</span>
-              <p>Defesa em processos conduzidos por órgãos reguladores e autoridades administrativas.</p>
-              <a class="area-row-link" href="areas-de-atuacao.html#contencioso-administrativo">Saiba mais<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-</div>
+          <p>Defesa em processos conduzidos por órgãos reguladores e autoridades administrativas.</p>
+          <a class="btn btn-outline-dark" href="areas-de-atuacao.html#contencioso-administrativo">Saiba mais</a>
         </div>
       </div>
-      <div class="area-acc-item reveal" style="transition-delay:200ms">
-        <button class="area-acc-header" aria-expanded="false">
-          <span class="area-acc-num">06</span>
-          <h3>Recursos e Tribunais Superiores</h3>
-          <svg class="area-acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      <div class="area-tab">
+        <button class="area-tab-btn reveal" style="transition-delay:250ms" id="tab-tribunais-superiores" aria-controls="painel-tribunais-superiores" aria-expanded="false">
+          <span class="area-tab-num">06</span>
+          <span class="area-tab-title">Recursos e Tribunais Superiores</span>
         </button>
-        <div class="area-acc-panel">
-          <div class="area-acc-panel-inner">
-            <div class="area-acc-panel-content">
-              <span class="area-acc-ghost" aria-hidden="true">06</span>
-              <p>Atuação perante STJ e STF na condução de recursos e medidas estratégicas.</p>
-              <a class="area-row-link" href="areas-de-atuacao.html#tribunais-superiores">Saiba mais<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-</div>
+        <div class="area-tab-panel" id="painel-tribunais-superiores" role="region" aria-labelledby="tab-tribunais-superiores">
+          <span class="area-tab-ghost" aria-hidden="true">06</span>
+          <h3>Recursos e Tribunais Superiores</h3>
+          <p>Atuação perante STJ e STF na condução de recursos e medidas estratégicas.</p>
+          <a class="btn btn-outline-dark" href="areas-de-atuacao.html#tribunais-superiores">Saiba mais</a>
         </div>
       </div>
     </div>
