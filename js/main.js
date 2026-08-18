@@ -98,30 +98,6 @@
     restartAutoplay();
   }
 
-  // Áreas de Atuação: menu de títulos + painel. Exatamente um item fica
-  // sempre ativo, então clicar no ativo não faz nada.
-  var areaTabs = document.querySelectorAll('.area-tab-btn');
-  if (areaTabs.length) {
-    var panelOf = function (btn) {
-      return document.getElementById(btn.getAttribute('aria-controls'));
-    };
-    areaTabs.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        if (btn.classList.contains('is-active')) return;
-        areaTabs.forEach(function (other) {
-          other.classList.remove('is-active');
-          other.setAttribute('aria-expanded', 'false');
-          var otherPanel = panelOf(other);
-          if (otherPanel) otherPanel.classList.remove('is-active');
-        });
-        btn.classList.add('is-active');
-        btn.setAttribute('aria-expanded', 'true');
-        var panel = panelOf(btn);
-        if (panel) panel.classList.add('is-active');
-      });
-    });
-  }
-
   var teamTrack = document.getElementById('teamTrack');
   var teamPrev = document.querySelector('.team-nav.prev');
   var teamNext = document.querySelector('.team-nav.next');
