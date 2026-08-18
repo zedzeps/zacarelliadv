@@ -264,6 +264,28 @@ header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);
   .stat-item{border-right:0 !important}
 }
 
+/* ===== Quem Somos — destaque do fundador =====
+   Retrato do fundador com moldura dourada deslocada por trás (camada
+   editorial "premium") e uma legenda-chip com nome e cargo. */
+.founder-split{display:grid;grid-template-columns:0.82fr 1.18fr;gap:clamp(40px,6vw,88px);align-items:center}
+.founder-visual{position:relative;align-self:stretch}
+.founder-visual img{position:relative;z-index:1;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:var(--radius)}
+.founder-frame{position:absolute;z-index:0;right:-22px;bottom:-22px;width:62%;height:70%;border:1px solid var(--gold-dark);border-radius:var(--radius);pointer-events:none}
+.founder-caption{position:absolute;z-index:2;left:0;bottom:26px;display:flex;flex-direction:column;gap:3px;background:var(--black);color:#fff;padding:14px 22px;font-family:'Oswald',sans-serif;font-weight:500;font-size:15px;letter-spacing:.5px;box-shadow:0 16px 34px rgba(20,17,19,0.28)}
+.founder-caption em{font-style:normal;font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--secondary)}
+.founder-copy .eyebrow{margin-bottom:16px}
+.founder-copy h2{margin-bottom:26px;max-width:15ch}
+.founder-copy p{margin-bottom:20px;max-width:520px}
+.founder-copy .btn{margin-top:14px}
+
+@media(max-width:860px){
+  .founder-split{grid-template-columns:1fr;gap:44px}
+  .founder-visual{max-width:440px}
+  .founder-visual img{aspect-ratio:3/4}
+  .founder-frame{right:-14px;bottom:-14px}
+  .founder-copy h2{max-width:none}
+}
+
 /* ===== Destaques (photo + editorial numbered list) ===== */
 .destaques-split{display:grid;grid-template-columns:0.85fr 1.15fr;gap:var(--grid-gap);align-items:center}
 .destaques-visual{position:relative;aspect-ratio:3/4;border-radius:var(--radius-lg);overflow:hidden}
