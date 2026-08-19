@@ -320,11 +320,21 @@ header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);
 .atuacao-card p{font-size:15px;line-height:1.8;margin-bottom:32px}
 .atuacao-card-cta .cta-short{display:none}
 
+/* Variação B: o cartão mantém texto e posição, mas o fundo se estende até
+   a borda direita da tela ("colado"). Um pseudo-elemento pinta o creme do
+   fim do cartão até fora da viewport (recortado pelo overflow da seção),
+   sem alterar o layout do texto. */
+.atuacao-feature--bleed .atuacao-card{position:relative;border-radius:var(--radius) 0 0 var(--radius)}
+.atuacao-feature--bleed .atuacao-card::after{content:"";position:absolute;top:0;bottom:0;left:calc(100% - 1px);width:100vw;background:var(--bg-light);z-index:-1}
+
 @media(max-width:720px){
   .atuacao-feature .row{justify-content:stretch}
   .atuacao-card{max-width:none;width:100%}
   .atuacao-card-cta .cta-full{display:none}
   .atuacao-card-cta .cta-short{display:inline}
+  /* No mobile o cartão já ocupa a largura toda; a extensão fica inerte. */
+  .atuacao-feature--bleed .atuacao-card{border-radius:var(--radius)}
+  .atuacao-feature--bleed .atuacao-card::after{display:none}
 }
 
 /* ===== Nossa Equipe ===== */
