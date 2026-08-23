@@ -130,6 +130,39 @@
     });
   }
 
+  // Accordion da página Áreas de Atuação (um item aberto por vez; deep-link
+  // via hash abre e rola até o item correspondente).
+  var accItems = document.querySelectorAll('.area-acc-item');
+  if (accItems.length) {
+    var openAcc = function (item, scroll) {
+      accItems.forEach(function (i) {
+        var open = i === item;
+        i.classList.toggle('is-open', open);
+        i.querySelector('.area-acc-header').setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      if (scroll) window.setTimeout(function () {
+        item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+    };
+    accItems.forEach(function (item) {
+      item.querySelector('.area-acc-header').addEventListener('click', function () {
+        if (item.classList.contains('is-open')) {
+          item.classList.remove('is-open');
+          item.querySelector('.area-acc-header').setAttribute('aria-expanded', 'false');
+        } else {
+          openAcc(item, false);
+        }
+      });
+    });
+    var openFromHash = function () {
+      if (!window.location.hash) return;
+      var target = document.getElementById(window.location.hash.slice(1));
+      if (target && target.classList.contains('area-acc-item')) openAcc(target, true);
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+  }
+
   var header = document.querySelector('header');
   if (header) {
     var onHeaderScroll = function () {
