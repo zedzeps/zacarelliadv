@@ -14,49 +14,57 @@
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Jost:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Jost:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-<header>
+<header id="siteHeader">
   <div class="row nav">
-    <a class="logo" href="index.html" aria-label="Advocacia Zacarelli — início">
-      <img src="assets/img/logo-color.png" alt="Advocacia Zacarelli">
+    <a class="brand" href="index.html" aria-label="Advocacia Zacarelli — início">
+      <img src="assets/img/logo-white.png" alt="Advocacia Zacarelli">
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
+      <li><a href="quem-somos.html" class="active">Quem Somos</a></li>
+      <li><a href="equipe.html">Equipe</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
       <span></span><span></span><span></span>
     </button>
-    <nav aria-label="Navegação principal">
-      <ul class="nav-links" id="navLinks">
+  </div>
+  <div class="drawer" id="drawer">
+    <div class="row">
+      <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
         <li><a href="quem-somos.html" class="active">Quem Somos</a></li>
         <li><a href="equipe.html">Equipe</a></li>
-        <li><a href="contato.html" class="btn btn-primary">Fale Conosco</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
-    </nav>
+    </div>
   </div>
 </header>
 
 <main id="conteudo">
 
 <!-- ===== HERO ===== -->
-<section class="hero dark" id="top">
-  <div class="hero-bg" aria-hidden="true">
-    <img src="assets/img/Equipe/37045_EquipeAdvocaciaZacarelli1.jpg" alt="" data-parallax>
-  </div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="hero-frame" aria-hidden="true"></div>
-  <img class="hero-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
-  <div class="row">
-    <div class="hero-copy">
-      <p class="eyebrow">Quem Somos</p>
-      <h1>Tradição, compromisso e excelência técnica</h1>
-      <p class="lead">Fundada por Aristides Zacarelli Neto, a Advocacia Zacarelli nasceu da convicção de que a advocacia criminal deve ser exercida com dedicação, responsabilidade e compromisso com a Justiça.</p>
-    </div>
+<section class="hero hero--inner on-photo js-hero" id="top" style="--hero-img:url('assets/img/Equipe/37045_EquipeAdvocaciaZacarelli1.jpg');--hero-img-blur:url('assets/img/blur/equipe1-blur.jpg');--hero-focal:50% 46%;--hero-zoom:1.1">
+  <div class="hero__media js-media" style="background-image:url('assets/img/Equipe/37045_EquipeAdvocaciaZacarelli1.jpg')"></div>
+  <div class="hero__blur js-media" style="background-image:url('assets/img/blur/equipe1-blur.jpg')"></div>
+  <div class="hero__dim"></div>
+  <div class="hero__scrim"></div>
+  <div class="g"><i class="mesh"></i><i class="tint"></i></div>
+  <div class="hero__grain"></div>
+  <div class="row hero__content">
+    <p class="eyebrow rv d1">Quem Somos<span class="rv-rule"></span></p>
+    <h1 class="rv-mask"><span class="d2">Tradição, compromisso e excelência técnica</span></h1>
+    <p class="hero__lead rv d3">Fundada por Aristides Zacarelli Neto, a Advocacia Zacarelli nasceu da convicção de que a advocacia criminal deve ser exercida com dedicação, responsabilidade e compromisso com a Justiça.</p>
   </div>
 </section>
 

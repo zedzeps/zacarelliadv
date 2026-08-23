@@ -33,6 +33,26 @@
   --grid-gap:min(4vw, 60px);
   --row-max:1080px;
   --ease:cubic-bezier(.16,1,.3,1);
+
+  /* == Banner glassmorphism (calibragem aprovada — vale para todos os banners) == */
+  --font-display:'Playfair Display','Times New Roman',serif;
+  --espresso:#1E1817;
+  --header-h:80px;
+  --k:0.40;    /* vidro  */
+  --m:0.75;    /* vitral */
+  --dim:0.20;  /* overlay escuro sobre a foto */
+  --glass-warm:206,184,155;
+  --glass-dark:22,16,14;
+  --mesh-gold:206,184,155;
+  --mesh-mocha:91,66,56;
+  --mesh-mauve:104,93,99;
+  --mesh-cacau:60,43,37;
+  --hero-focal:50% 52%;
+  --hero-zoom:1.12;
+  --hero-bleed-y:-8%;
+  --hero-bleed-x:-5%;
+  --ease-soft:cubic-bezier(.22,1,.36,1);
+  --ease-glass:cubic-bezier(.16,.84,.44,1);
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,114 +89,88 @@ ul{list-style:none}
 .btn-outline-dark{background:transparent;color:var(--heading);border:1px solid var(--border-dark)}
 .btn-outline-dark:hover{background:var(--heading);color:#fff;border-color:var(--heading)}
 .btn:active{transform:scale(.97)}
+.btn .btn-arrow{display:inline-block;margin-left:9px;transition:transform .3s var(--ease)}
+.btn:hover .btn-arrow{transform:translateX(4px)}
 
 .link-underline{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--primary);display:inline-block;border-bottom:1px solid var(--secondary);padding-bottom:3px;transition:color .25s var(--ease),border-color .25s var(--ease),letter-spacing .25s var(--ease)}
 .link-underline:hover{color:var(--gold-dark);border-color:var(--gold-dark);letter-spacing:2.6px}
 .dark .link-underline{color:#fff}
 .dark .link-underline:hover{color:var(--secondary)}
 
-/* ===== Header ===== */
-header{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--border-dark);z-index:100;transition:background .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)}
-header.is-scrolled{background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:transparent;box-shadow:0 12px 30px rgba(36,31,34,0.10)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:88px}
-.nav .logo img{height:40px;width:auto}
-.nav ul{display:flex;align-items:center;gap:32px}
-.nav a{font-family:'Jost',sans-serif;font-weight:500;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:rgba(43,37,41,0.7);transition:color .2s}
-.nav a:hover,.nav a.active{color:var(--primary)}
-.nav .btn-primary{padding:12px 24px;font-size:12px;background:transparent;border-color:rgba(43,37,41,0.4);color:var(--heading)}
-.nav .btn-primary:hover{background:var(--heading);border-color:var(--heading);color:#fff}
-.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:0;cursor:pointer}
-.nav-toggle span{display:block;width:100%;height:1px;background:var(--heading)}
+/* ===== Header — transparente no topo, vidro escuro ao rolar/abrir ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:70;background:transparent;border-bottom:1px solid transparent;transition:background .4s ease,border-color .4s ease,box-shadow .4s ease,backdrop-filter .4s ease}
+header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:1;transition:opacity .4s ease;background:linear-gradient(180deg, rgba(12,9,8,.58) 0%, rgba(12,9,8,.28) 55%, rgba(12,9,8,0) 100%)}
+header.is-stuck,header.is-open{background:rgba(20,15,14,.72);backdrop-filter:blur(20px) saturate(130%);-webkit-backdrop-filter:blur(20px) saturate(130%);border-bottom-color:rgba(255,255,255,.13);box-shadow:0 12px 34px rgba(10,7,6,.24)}
+header.is-stuck::before,header.is-open::before{opacity:0}
+.nav{display:flex;align-items:center;justify-content:space-between;height:var(--header-h)}
+.nav .brand{display:flex;align-items:center}
+.nav .brand img{height:40px;width:auto;display:block;filter:drop-shadow(0 1px 10px rgba(0,0,0,.45));transition:filter .4s ease}
+header.is-stuck .nav .brand img{filter:none}
+.nav ul.nav-links{display:flex;align-items:center;gap:34px;list-style:none}
+.nav-links a{font-family:'Jost',sans-serif;font-weight:500;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.82);transition:color .25s;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+header.is-stuck .nav-links a{text-shadow:none}
+.nav-links a:hover,.nav-links a.active{color:#E4D3B8}
+.burger{display:none;width:44px;height:44px;margin-right:-10px;align-items:center;justify-content:center;flex-direction:column;gap:5px;background:transparent;border:0;cursor:pointer}
+.burger span{display:block;width:22px;height:1.5px;background:#fff;border-radius:2px;box-shadow:0 1px 8px rgba(0,0,0,.45);transition:transform .3s ease,opacity .25s ease,box-shadow .4s ease}
+header.is-stuck .burger span{box-shadow:none}
+header.is-open .burger span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+header.is-open .burger span:nth-child(2){opacity:0}
+header.is-open .burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.drawer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+header.is-open .drawer{max-height:360px}
+.drawer ul{list-style:none;display:block;padding:8px 0 22px}
+.drawer li{border-top:1px solid rgba(255,255,255,.1)}
+.drawer a{display:block;padding:15px 0;font-family:'Jost',sans-serif;font-weight:500;font-size:13px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.86)}
+.drawer a:hover,.drawer a.active{color:#E4D3B8}
+@media(max-width:860px){.nav ul.nav-links{display:none}.burger{display:flex}}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){header.is-stuck,header.is-open{background:rgba(24,18,17,.9)}}
 
-@media(max-width:900px){
-  /* Glass off no mobile: o backdrop-filter no header o tornava "containing
-     block" do menu position:fixed, prendendo o overlay dentro dos 88px do
-     header (fundo sumia + itens desalinhados) quando aberto já rolado.
-     Header sólido evita isso e mantém o overlay ancorado à viewport. */
-  header.is-scrolled{background:var(--white);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 8px 20px rgba(36,31,34,0.08)}
-  /* Menu em overlay escuro com degradê + blur discreto (glass), texto claro. */
-  .nav-links{position:fixed;top:88px;left:0;right:0;bottom:0;height:auto;width:100%;z-index:120;
-    background:linear-gradient(165deg, rgba(36,31,34,0.90) 0%, rgba(20,17,19,0.94) 100%);
-    backdrop-filter:blur(14px) saturate(120%);-webkit-backdrop-filter:blur(14px) saturate(120%);
-    flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;gap:30px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
-  .nav-links.open{opacity:1;transform:translateY(0);pointer-events:auto}
-  .nav-links a{color:rgba(255,255,255,0.88)}
-  .nav-links a:hover,.nav-links a.active{color:var(--secondary)}
-  .nav-links .btn-primary{background:transparent;border-color:rgba(255,255,255,0.5);color:#fff}
-  .nav-links .btn-primary:hover{background:var(--secondary);border-color:var(--secondary);color:var(--black)}
-  /* O <nav> que envolve o menu (fixed/fora do fluxo no mobile) ficava como
-     3º item flex e roubava a vaga da direita no space-between, prendendo o
-     hambúrguer no meio. margin-left:auto encosta o botão na borda direita. */
-  .nav-toggle{display:flex;margin-left:auto}
+/* ===== Banner glassmorphism — padrão único do site ===== */
+.hero{--glass-blur-soft:calc(8px * var(--k));--glass-blur-mid:calc(18px * var(--k));--glass-blur-deep:calc(34px * var(--k));position:relative;min-height:min(88vh,840px);display:flex;overflow:hidden;isolation:isolate;color:rgba(255,255,255,.86);background:var(--espresso)}
+.hero--inner{min-height:min(58vh,520px)}
+.hero__media{position:absolute;inset:var(--hero-bleed-y) var(--hero-bleed-x);z-index:0;background-image:var(--hero-img);background-size:cover;background-position:var(--hero-focal);transform:scale(var(--hero-zoom));will-change:transform}
+.hero__blur{position:absolute;inset:var(--hero-bleed-y) var(--hero-bleed-x);z-index:1;pointer-events:none;background-image:var(--hero-img-blur);background-size:cover;background-position:var(--hero-focal);transform:scale(var(--hero-zoom));will-change:transform;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 24%,transparent 64%);mask-image:linear-gradient(90deg,#000 0%,#000 24%,transparent 64%)}
+.hero__dim{position:absolute;inset:0;z-index:2;pointer-events:none;background:rgba(12,9,8,var(--dim))}
+.hero__scrim{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(100deg, rgba(18,14,12,.52) 0%, rgba(18,14,12,.26) 46%, rgba(18,14,12,0) 80%),linear-gradient(0deg, rgba(14,10,9,.46) 0%, rgba(14,10,9,0) 42%)}
+.g{position:absolute;z-index:3;pointer-events:none;left:0;top:0;bottom:0;width:min(92%,1320px)}
+.g > i{position:absolute;inset:0;display:block}
+.g .mesh{background:radial-gradient(46% 60% at 4% 88%, rgba(var(--mesh-mocha),.90) 0%, transparent 68%),radial-gradient(42% 54% at 20% 14%, rgba(var(--mesh-gold),.62) 0%, transparent 66%),radial-gradient(50% 66% at 14% 56%, rgba(var(--mesh-mauve),.76) 0%, transparent 70%),radial-gradient(46% 58% at 34% 78%, rgba(var(--mesh-cacau),.80) 0%, transparent 68%);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 28%,transparent 64%);mask-image:linear-gradient(90deg,#000 0%,#000 28%,transparent 64%);opacity:calc(.92*var(--k)*var(--m))}
+.g .tint{background:linear-gradient(90deg, rgba(var(--glass-dark),.36) 0%, rgba(var(--glass-dark),.20) 34%, rgba(var(--glass-dark),0) 72%),linear-gradient(200deg, rgba(var(--glass-warm),.13) 0%, rgba(var(--glass-warm),0) 46%);opacity:var(--k)}
+.hero__grain{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:.045;mix-blend-mode:overlay;background-image:url("../assets/img/noise.png");background-size:120px 120px}
+.hero__content{position:relative;z-index:6;width:100%;align-self:flex-end;padding-top:clamp(52px,10vw,120px);padding-bottom:clamp(56px,8vw,96px)}
+.hero--inner .hero__content{padding-top:clamp(90px,12vw,150px);padding-bottom:clamp(40px,5vw,64px)}
+.hero .eyebrow{color:var(--secondary)}
+.hero h1{font-family:var(--font-display);font-weight:500;letter-spacing:-.01em;color:#fff;font-size:clamp(30px,5vw,62px);line-height:1.16;max-width:16ch;margin:20px 0 0}
+.hero--inner h1{margin:16px 0 0}
+.hero__lead{color:rgba(255,255,255,0.86);font-size:16px;line-height:1.75;max-width:48ch;margin:22px 0 38px}
+.hero .btn{margin-top:4px}
+
+/* Entrada: 1) o vidro se forma; 2) o texto sobe sob máscara; 3) o fio dourado se desenha. */
+.hero__blur,.g .mesh,.g .tint{transition:opacity 1.3s var(--ease-glass)}
+html.js .hero:not(.is-in) .hero__blur,html.js .hero:not(.is-in) .g .mesh,html.js .hero:not(.is-in) .g .tint{opacity:0}
+html.js .hero:not(.is-in) .rv{opacity:0;transform:translateY(18px)}
+.rv{will-change:transform,opacity;transition:opacity 1.05s var(--ease-soft),transform 1.05s var(--ease-soft)}
+.rv-mask{overflow:hidden;padding-bottom:.14em;margin-bottom:calc(24px - .14em)}
+.rv-mask > span{display:block;will-change:transform,opacity;transition:opacity 1.15s var(--ease-soft),transform 1.2s var(--ease-soft)}
+html.js .hero:not(.is-in) .rv-mask > span{opacity:0;transform:translateY(102%)}
+.rv-rule{display:block;height:1px;width:min(180px,42%);background:linear-gradient(90deg,var(--secondary),rgba(206,184,155,0));margin-top:14px;transform-origin:left center;will-change:transform;transition:transform 1.4s var(--ease-soft) .78s}
+html.js .hero:not(.is-in) .rv-rule{transform:scaleX(0)}
+.hero .d1{transition-delay:.34s}.hero .d2{transition-delay:.50s}.hero .d3{transition-delay:.72s}.hero .d4{transition-delay:.90s}
+
+@media(max-width:1024px){.hero{--hero-focal:48% 54%;--hero-zoom:1.08}}
+@media(max-width:700px){
+  .hero{min-height:84vh;--hero-zoom:1.04;--hero-bleed-y:-6%;--hero-bleed-x:0%}
+  .hero--inner{min-height:min(56vh,440px)}
+  .hero__content{padding-top:clamp(40px,12vw,80px);padding-bottom:clamp(44px,10vw,72px)}
+  .hero h1{max-width:none}
+  .hero__lead{font-size:15px}
 }
-
-/* ===== Hero (full-bleed parallax background, split copy) ===== */
-.hero{background:var(--black);position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
-.hero-bg img{position:absolute;top:-25%;left:0;width:100%;max-width:none;height:150%;object-fit:cover;will-change:transform}
-/* Vinheta leve: a foto fica "pura" (quase sem overlay). O escurecimento
-   para leitura vem do painel de vidro atrás do texto (.hero-copy). */
-.hero-overlay{position:absolute;inset:0;z-index:1;background:
-  linear-gradient(180deg, rgba(20,17,19,0.14) 0%, rgba(20,17,19,0) 34%, rgba(20,17,19,0.30) 100%),
-  linear-gradient(90deg, rgba(20,17,19,0.18) 0%, rgba(20,17,19,0) 55%)}
-.hero-frame{position:absolute;inset:20px;border:1px solid rgba(206,184,155,0.28);pointer-events:none;z-index:3}
-.hero-mark{position:absolute;top:50%;right:-28%;transform:translateY(-50%);height:clamp(420px,42vw,600px);width:auto;opacity:.15;pointer-events:none;z-index:1}
-.hero .row{position:relative;z-index:2;padding-top:var(--sp-fluid);padding-bottom:var(--sp-fluid);min-height:640px;display:flex;align-items:center}
-/* Painel de vidro atrás do texto: transparência + blur discreto para dar
-   leitura sem "chapar" a foto com overlay cheio. */
-.hero-copy{position:relative;max-width:640px;padding:clamp(26px,3.4vw,46px);border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.12);border-left:2px solid var(--secondary);background:rgba(22,18,20,0.32);backdrop-filter:blur(10px) saturate(118%);-webkit-backdrop-filter:blur(10px) saturate(118%)}
-.hero-copy .eyebrow{margin-bottom:20px}
-.hero-copy h1{color:var(--heading-light);max-width:620px;font-size:clamp(28px,3vw,40px);line-height:1.2;margin-bottom:28px}
-.hero-copy p.lead{color:var(--body-light);max-width:460px;margin-bottom:28px}
-.hero-copy .rule{margin-bottom:36px}
-
-/* Larger, more confident hero type on pages that use the slider (index.html) */
-.page-home .hero .row{min-height:680px}
-.page-home .hero-copy .eyebrow{margin-bottom:22px}
-.page-home .hero-copy h1{max-width:660px;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.3px;line-height:1.15;margin-bottom:26px}
-.page-home .hero-copy p.lead{margin-bottom:32px;text-wrap:pretty}
-
-.hero-slider{display:grid}
-.hero-slide{grid-area:1/1;opacity:0;visibility:hidden;transform:translateX(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);pointer-events:none}
-.hero-slide.is-active{opacity:1;visibility:visible;transform:translateX(0);pointer-events:auto}
-
-.hero-slider-note{display:block;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--secondary);opacity:.8;margin-bottom:14px}
-.hero-slider-controls{display:flex;align-items:center;gap:14px}
-.hero-nav-btn{width:38px;height:38px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,0.32);background:rgba(255,255,255,0.04);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease),transform .2s var(--ease)}
-.hero-nav-btn svg{width:16px;height:16px;display:block}
-.hero-nav-btn:hover{background:var(--secondary);border-color:var(--secondary);color:var(--black)}
-.hero-nav-btn:active{transform:scale(.92)}
-.hero-slider-dots{display:flex;gap:18px}
-.hero-slider-dots .dot{display:flex;flex-direction:column;align-items:flex-start;gap:8px;border:0;background:none;cursor:pointer;padding:0}
-.dot-num{font-family:'Oswald',sans-serif;font-weight:400;font-size:12px;letter-spacing:1.5px;color:rgba(255,255,255,0.45);transition:color .3s var(--ease)}
-.hero-slider-dots .dot.is-active .dot-num{color:var(--secondary)}
-.dot-track{position:relative;width:36px;height:2px;border-radius:2px;overflow:hidden;background:rgba(255,255,255,0.25);transition:background .25s var(--ease)}
-.hero-slider-dots .dot:hover .dot-track{background:rgba(255,255,255,0.45)}
-.dot-fill{position:absolute;inset:0;background:var(--secondary);transform:scaleX(0);transform-origin:left}
-.hero-slider-dots .dot.is-active .dot-fill{transform:scaleX(1)}
-.dot-fill.is-filling{animation:heroDotFill 7s linear forwards}
-@keyframes heroDotFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-
-.hero-scroll-cue{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);z-index:2;width:22px;height:36px;border:1.5px solid rgba(255,255,255,0.45);border-radius:12px;display:flex;justify-content:center;padding-top:7px}
-.hero-scroll-cue span{width:3px;height:8px;border-radius:2px;background:var(--secondary);animation:heroScrollCue 1.8s ease-in-out infinite}
-@keyframes heroScrollCue{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.25;transform:translateY(8px)}}
-
-@media(max-width:1000px){
-  .hero .row{min-height:auto;text-align:left}
-  .hero-copy h1{max-width:520px}
-  .hero-mark{height:clamp(280px,70vw,420px);right:-14%}
-  .hero-scroll-cue{display:none}
-}
-
-@media(max-width:640px){
-  .hero-mark{display:none}
-}
-
 @media(prefers-reduced-motion:reduce){
-  .hero-bg img,.cta-bg img,.atuacao-feature-bg img{transform:none !important}
-  .hero-scroll-cue span{animation:none}
-  .dot-fill.is-filling{animation:none;transform:scaleX(1)}
+  html.js .hero:not(.is-in) .hero__blur,html.js .hero:not(.is-in) .g .mesh,html.js .hero:not(.is-in) .g .tint,
+  html.js .hero:not(.is-in) .rv,html.js .hero:not(.is-in) .rv-mask > span,html.js .hero:not(.is-in) .rv-rule{opacity:1;transform:none}
+  .hero__blur,.g .mesh,.g .tint,.rv,.rv-mask > span,.rv-rule{transition:none}
 }
+
 
 /* ===== Section shells ===== */
 .section{padding:var(--sp-fluid) 0}

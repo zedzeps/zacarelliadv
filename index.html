@@ -14,81 +14,59 @@
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Jost:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Jost:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-home">
 
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-<header>
+<header id="siteHeader">
   <div class="row nav">
-    <a class="logo" href="index.html" aria-label="Advocacia Zacarelli — início">
-      <img src="assets/img/logo-color.png" alt="Advocacia Zacarelli">
+    <a class="brand" href="index.html" aria-label="Advocacia Zacarelli — início">
+      <img src="assets/img/logo-white.png" alt="Advocacia Zacarelli">
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="equipe.html">Equipe</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
       <span></span><span></span><span></span>
     </button>
-    <nav aria-label="Navegação principal">
-      <ul class="nav-links" id="navLinks">
+  </div>
+  <div class="drawer" id="drawer">
+    <div class="row">
+      <ul>
         <li><a href="index.html" class="active">Início</a></li>
         <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
         <li><a href="quem-somos.html">Quem Somos</a></li>
         <li><a href="equipe.html">Equipe</a></li>
-        <li><a href="contato.html" class="btn btn-primary">Fale Conosco</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
-    </nav>
+    </div>
   </div>
 </header>
 
 <main id="conteudo">
 
 <!-- ===== HERO — slider com as duas versões de título para escolha ===== -->
-<section class="hero dark" id="top">
-  <div class="hero-bg" aria-hidden="true">
-    <img src="assets/img/Ambiente/zacarelli_sala3.jpg" alt="" data-parallax>
+<section class="hero on-photo js-hero" id="top" style="--hero-img:url('assets/img/Ambiente/zacarelli_sala3.jpg');--hero-img-blur:url('assets/img/blur/sala3-blur.jpg');--hero-focal:50% 40%;--hero-zoom:1.12">
+  <div class="hero__media js-media" style="background-image:url('assets/img/Ambiente/zacarelli_sala3.jpg')"></div>
+  <div class="hero__blur js-media" style="background-image:url('assets/img/blur/sala3-blur.jpg')"></div>
+  <div class="hero__dim"></div>
+  <div class="hero__scrim"></div>
+  <div class="g"><i class="mesh"></i><i class="tint"></i></div>
+  <div class="hero__grain"></div>
+  <div class="row hero__content">
+    <p class="eyebrow rv d1">Direito Penal · Direito Penal Empresarial<span class="rv-rule"></span></p>
+    <h1 class="rv-mask"><span class="d2">Tradição, estratégia e rigor técnico</span></h1>
+    <p class="hero__lead rv d3">Há mais de duas décadas, o escritório de Advocacia Zacarelli atua em Direito Penal e Direito Penal Empresarial, com uma abordagem humanista, personalizada e comprometida com a defesa dos direitos fundamentais.</p>
+    <a class="btn btn-gold rv d4" href="quem-somos.html">Conheça o escritório <span class="btn-arrow">→</span></a>
   </div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="hero-frame" aria-hidden="true"></div>
-  <img class="hero-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
-  <div class="row">
-    <div class="hero-copy">
-      <p class="eyebrow">Direito Penal · Direito Penal Empresarial</p>
-      <div class="hero-slider">
-        <div class="hero-slide is-active">
-          <h1>Advocacia criminal com tradição, estratégia e rigor técnico</h1>
-          <p class="lead">Há mais de duas décadas, o escritório de Advocacia Zacarelli atua em Direito Penal e Direito Penal Empresarial, com uma abordagem humanista, personalizada e comprometida com a defesa dos direitos fundamentais.</p>
-          <a class="btn btn-gold" href="quem-somos.html">Conheça o escritório</a>
-        </div>
-        <!-- Slide 02 desativado por ora — mantido no código para reativar o
-             A/B de títulos depois. Basta descomentar este slide, a nota e os
-             controles abaixo.
-        <div class="hero-slide">
-          <h1>O legado de uma advocacia exercida como vocação</h1>
-          <p class="lead">Fundada por Aristides Zacarelli Neto, a Advocacia Zacarelli consolidou sua trajetória a partir de valores que permanecem presentes em sua atuação: excelência técnica, compromisso com a Justiça e respeito aos direitos e garantias fundamentais.</p>
-          <p class="lead">Há mais de duas décadas, o escritório atua em Direito Penal e Direito Penal Empresarial, oferecendo assessoria jurídica estratégica, personalizada e alinhada aos desafios do mundo contemporâneo.</p>
-          <a class="btn btn-gold" href="quem-somos.html">Conheça o escritório</a>
-        </div>
-        -->
-      </div>
-      <!-- Controles do slider ocultos enquanto houver só um slide.
-      <span class="hero-slider-note">Duas versões de título em teste — escolha uma</span>
-      <div class="hero-slider-controls">
-        <button class="hero-nav-btn prev" type="button" aria-label="Versão anterior">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4l-8 8 8 8"/></svg>
-        </button>
-        <div class="hero-slider-dots" role="tablist" aria-label="Versões do título">
-          <button class="dot is-active" type="button" data-slide="0" role="tab" aria-selected="true" aria-label="Versão 1"><span class="dot-num">01</span><span class="dot-track"><span class="dot-fill"></span></span></button>
-          <button class="dot" type="button" data-slide="1" role="tab" aria-selected="false" aria-label="Versão 2"><span class="dot-num">02</span><span class="dot-track"><span class="dot-fill"></span></span></button>
-        </div>
-        <button class="hero-nav-btn next" type="button" aria-label="Próxima versão">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l8 8-8 8"/></svg>
-        </button>
-      </div>
-      -->
-    </div>
-  </div>
-  <a href="#destaques" class="hero-scroll-cue" aria-label="Rolar para o conteúdo"><span></span></a>
 </section>
 
 <!-- ===== NÚMEROS ===== -->
