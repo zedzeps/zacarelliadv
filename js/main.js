@@ -159,37 +159,27 @@
     });
   }
 
-  // Accordion da página Áreas de Atuação (um item aberto por vez; deep-link
-  // via hash abre e rola até o item correspondente).
-  var accItems = document.querySelectorAll('.area-acc-item');
-  if (accItems.length) {
-    var openAcc = function (item, scroll) {
-      accItems.forEach(function (i) {
-        var open = i === item;
-        i.classList.toggle('is-open', open);
-        i.querySelector('.area-acc-header').setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      if (scroll) window.setTimeout(function () {
-        item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Cards de Áreas de Atuação: deep-link via hash rola até o card
+  // correspondente e o destaca brevemente (usado pelos highlights da home e
+  // pelos links do rodapé).
+  var areaCards = document.querySelectorAll('.area-card');
+  if (areaCards.length) {
+    var highlightCard = function (card) {
+      areaCards.forEach(function (c) { c.classList.remove('is-target'); });
+      card.classList.add('is-target');
+      card.classList.add('in'); // garante que o reveal não o mantenha oculto
+      window.setTimeout(function () {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 60);
+      window.setTimeout(function () { card.classList.remove('is-target'); }, 2600);
     };
-    accItems.forEach(function (item) {
-      item.querySelector('.area-acc-header').addEventListener('click', function () {
-        if (item.classList.contains('is-open')) {
-          item.classList.remove('is-open');
-          item.querySelector('.area-acc-header').setAttribute('aria-expanded', 'false');
-        } else {
-          openAcc(item, false);
-        }
-      });
-    });
-    var openFromHash = function () {
+    var cardFromHash = function () {
       if (!window.location.hash) return;
       var target = document.getElementById(window.location.hash.slice(1));
-      if (target && target.classList.contains('area-acc-item')) openAcc(target, true);
+      if (target && target.classList.contains('area-card')) highlightCard(target);
     };
-    openFromHash();
-    window.addEventListener('hashchange', openFromHash);
+    cardFromHash();
+    window.addEventListener('hashchange', cardFromHash);
   }
 
   var revealEls = document.querySelectorAll('.reveal');
