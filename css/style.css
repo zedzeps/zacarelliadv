@@ -475,6 +475,25 @@ footer li::before{content:"—";color:var(--secondary);margin-right:10px}
   .area-card{padding:28px 22px}
 }
 
+/* ===== Áreas (home) — variação: cabeçalho central + chips de vidro sobre malha ===== */
+.mesh-dark h2,.mesh-dark h3,.mesh-dark h4{color:#fff}
+.mesh-dark .section-head p{color:var(--body-light)}
+.section-head.center p{margin-left:auto;margin-right:auto}
+.atuacao-glass .section-head{max-width:720px}
+.areas-chip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,1.8vw,22px);position:relative;z-index:2}
+.area-chip{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;min-height:104px;padding:24px 26px;border-radius:var(--radius-lg);
+  background:linear-gradient(155deg, rgba(255,255,255,.34) 0%, rgba(255,255,255,.16) 100%);
+  border:1px solid rgba(255,255,255,.5);
+  -webkit-backdrop-filter:blur(var(--blur)) saturate(140%);backdrop-filter:blur(var(--blur)) saturate(140%);
+  box-shadow:0 16px 42px rgba(10,7,6,.28), inset 0 1px 0 rgba(255,255,255,.6);
+  text-decoration:none;
+  transition:transform .45s var(--ease-glass),border-color .4s var(--ease-glass),box-shadow .4s var(--ease-glass),background .4s var(--ease-glass)}
+.area-chip::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent)}
+.area-chip span{position:relative;z-index:1;font-family:var(--font-display);font-size:19px;line-height:1.25;color:#fff;letter-spacing:-.01em;text-shadow:0 1px 10px rgba(10,7,6,.45)}
+.area-chip:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.8);
+  background:linear-gradient(155deg, rgba(255,255,255,.44) 0%, rgba(255,255,255,.22) 100%);
+  box-shadow:0 26px 62px rgba(10,7,6,.42), inset 0 1px 0 rgba(255,255,255,.72)}
+
 
 /* ===== Contato ===== */
 .contact-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:var(--grid-gap);align-items:start}
