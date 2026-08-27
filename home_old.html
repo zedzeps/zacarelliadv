@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Equipe — Advocacia Zacarelli</title>
-<meta name="description" content="Nossa equipe reúne experiência, especialização e atualização constante para enfrentar questões penais de elevada complexidade.">
-<meta property="og:title" content="Equipe — Advocacia Zacarelli">
-<meta property="og:description" content="Profissionais dedicados à excelência jurídica em Direito Penal e Direito Penal Empresarial.">
+<title>Advocacia Zacarelli — Direito Penal e Direito Penal Empresarial</title>
+<meta name="description" content="Há mais de duas décadas, o escritório de Advocacia Zacarelli atua em Direito Penal e Direito Penal Empresarial, com uma abordagem humanista, personalizada e comprometida com a defesa dos direitos fundamentais.">
+<meta property="og:title" content="Advocacia Zacarelli — Direito Penal e Direito Penal Empresarial">
+<meta property="og:description" content="Rigor técnico, tradição e atendimento personalizado em Direito Penal e Direito Penal Empresarial.">
 <meta property="og:image" content="assets/img/hero-bg.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,9 +16,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="css/style.css?v=20260823g">
+<link rel="stylesheet" href="css/style.css?v=20260823f">
 </head>
-<body>
+<body class="page-home">
 
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
@@ -28,10 +28,10 @@
       <img src="assets/img/logo-white.png" alt="Advocacia Zacarelli">
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html" class="active">Início</a></li>
       <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
       <li><a href="quem-somos.html">Quem Somos</a></li>
-      <li><a href="equipe.html" class="active">Equipe</a></li>
+      <li><a href="equipe.html">Equipe</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
@@ -41,10 +41,10 @@
   <div class="drawer" id="drawer">
     <div class="row">
       <ul>
-        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html" class="active">Início</a></li>
         <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
         <li><a href="quem-somos.html">Quem Somos</a></li>
-        <li><a href="equipe.html" class="active">Equipe</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </div>
@@ -53,25 +53,174 @@
 
 <main id="conteudo">
 
-<!-- ===== HERO ===== -->
-<section class="hero hero--inner on-photo js-hero" id="top" style="--hero-img:url('assets/img/Equipe/36968_EquipeAdvocaciaZacarelli3.jpg');--hero-img-blur:url('assets/img/blur/equipe3-blur.jpg');--hero-focal:50% 40%;--hero-zoom:1.1">
-  <div class="hero__media js-media" style="background-image:url('assets/img/Equipe/36968_EquipeAdvocaciaZacarelli3.jpg')"></div>
-  <div class="hero__blur js-media" style="background-image:url('assets/img/blur/equipe3-blur.jpg')"></div>
+<!-- ===== HERO — slider com as duas versões de título para escolha ===== -->
+<section class="hero on-photo js-hero" id="top" style="--hero-img:url('assets/img/Ambiente/zacarelli_sala3.jpg');--hero-img-blur:url('assets/img/blur/sala3-blur.jpg');--hero-focal:50% 40%;--hero-zoom:1.12">
+  <div class="hero__media js-media" style="background-image:url('assets/img/Ambiente/zacarelli_sala3.jpg')"></div>
+  <div class="hero__blur js-media" style="background-image:url('assets/img/blur/sala3-blur.jpg')"></div>
   <div class="hero__dim"></div>
   <div class="hero__scrim"></div>
   <div class="g"><i class="mesh"></i><i class="tint"></i></div>
   <div class="hero__grain"></div>
   <div class="row hero__content">
-    <p class="eyebrow rv d1">Equipe<span class="rv-rule"></span></p>
-    <h1 class="rv-mask"><span class="d2">Profissionais dedicados à excelência jurídica</span></h1>
-    <p class="hero__lead rv d3">Nossa equipe reúne experiência, especialização e atualização constante para enfrentar questões penais de elevada complexidade.</p>
+    <p class="eyebrow rv d1">Direito Penal · Direito Penal Empresarial<span class="rv-rule"></span></p>
+    <h1 class="rv-mask"><span class="d2">Tradição, estratégia e rigor técnico</span></h1>
+    <p class="hero__lead rv d3">Há mais de duas décadas, o escritório de Advocacia Zacarelli atua em Direito Penal e Direito Penal Empresarial, com uma abordagem humanista, personalizada e comprometida com a defesa dos direitos fundamentais.</p>
+    <a class="btn btn-gold rv d4" href="quem-somos.html">Conheça o escritório <span class="btn-arrow">→</span></a>
   </div>
 </section>
 
-<!-- ===== EQUIPE COMPLETA (foto, mini bio e área de atuação) ===== -->
-<section class="section">
+<!-- ===== NÚMEROS ===== -->
+<section class="section stats-band grain">
   <div class="row">
-    <div class="grid grid-3">
+    <div class="section-head reveal">
+      <h2>Números que refletem nossa trajetória</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <b>+20</b>
+        <span>anos de atuação em Direito Penal</span>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:80ms">
+        <b>+10</b>
+        <span>anos entre os escritórios mais admirados do Brasil pela Análise Advocacia</span>
+      </div>
+      <div class="stat-item stat-item--text reveal" style="transition-delay:160ms">
+        <span class="stat-highlight">Atuação nacional em todas as instâncias da jurisdição criminal</span>
+      </div>
+      <div class="stat-item stat-item--text reveal" style="transition-delay:240ms">
+        <span class="stat-highlight">Presença frequente nos Tribunais Superiores</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUEM SOMOS — destaque do fundador ===== -->
+<section class="section alt founder" id="quem-somos">
+  <div class="row founder-split">
+    <div class="founder-visual reveal">
+      <span class="founder-frame" aria-hidden="true"></span>
+      <img src="assets/img/Perfil_Equipe/36519_Aristides_Zacarelli_Neto3.jpg" alt="Aristides Zacarelli Neto, sócio fundador da Advocacia Zacarelli">
+      <span class="founder-caption">Aristides Zacarelli Neto<em>Sócio Fundador</em></span>
+    </div>
+    <div class="founder-copy reveal">
+      <p class="eyebrow">Quem somos</p>
+      <h2>O legado de uma advocacia exercida como vocação</h2>
+      <p>Fundada por Aristides Zacarelli Neto, a Advocacia Zacarelli consolidou sua trajetória a partir de valores que permanecem presentes em sua atuação: excelência técnica, compromisso com a Justiça e respeito aos direitos e garantias fundamentais.</p>
+      <p>Há mais de duas décadas, o escritório atua em Direito Penal e Direito Penal Empresarial, oferecendo assessoria jurídica estratégica, personalizada e alinhada aos desafios do mundo contemporâneo.</p>
+      <a class="btn btn-primary" href="quem-somos.html">Conheça o escritório</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÁREAS DE ATUAÇÃO — cartão sobre foto + highlights clicáveis ===== -->
+<section class="atuacao-feature" id="atuacao">
+  <div class="atuacao-feature-bg" aria-hidden="true">
+    <img src="assets/img/Ambiente/zacarelli_sala2.jpg" alt="" data-parallax>
+  </div>
+  <div class="atuacao-feature-scrim" aria-hidden="true"></div>
+  <div class="row">
+    <div class="atuacao-card reveal">
+      <p class="eyebrow">Onde nossa expertise faz diferença</p>
+      <h2>Nossas áreas de atuação</h2>
+      <ul class="area-highlights">
+        <li><a href="areas-de-atuacao.html#defesa-criminal">Defesa Criminal<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="areas-de-atuacao.html#vitimas-seguros">Representação de Vítimas e Mercado de Seguros<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="areas-de-atuacao.html#investigacoes-corporativas">Investigações Corporativas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="areas-de-atuacao.html#compliance">Compliance, Integridade e Consultoria Preventiva<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="areas-de-atuacao.html#contencioso-administrativo">Contencioso Administrativo Sancionador<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="areas-de-atuacao.html#tribunais-superiores">Recursos e Tribunais Superiores<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÁREAS DE ATUAÇÃO — VARIAÇÃO GLASS (cabeçalho central + chips de vidro sobre malha) ===== -->
+<section class="section atuacao-glass areas-vitral" id="atuacao-glass">
+  <div class="areas-vitral__bg" data-parallax aria-hidden="true"></div>
+  <div class="row">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Onde nossa expertise faz diferença</p>
+      <h2>Nossas áreas de atuação</h2>
+    </div>
+    <div class="areas-chip-grid">
+      <a class="area-chip reveal" href="areas-de-atuacao.html#defesa-criminal"><span>Defesa Criminal</span></a>
+      <a class="area-chip reveal" style="transition-delay:40ms" href="areas-de-atuacao.html#vitimas-seguros"><span>Representação de Vítimas e Mercado de Seguros</span></a>
+      <a class="area-chip reveal" style="transition-delay:80ms" href="areas-de-atuacao.html#investigacoes-corporativas"><span>Investigações Corporativas</span></a>
+      <a class="area-chip reveal" style="transition-delay:120ms" href="areas-de-atuacao.html#compliance"><span>Compliance, Integridade e Consultoria Preventiva</span></a>
+      <a class="area-chip reveal" style="transition-delay:160ms" href="areas-de-atuacao.html#contencioso-administrativo"><span>Contencioso Administrativo Sancionador</span></a>
+      <a class="area-chip reveal" style="transition-delay:200ms" href="areas-de-atuacao.html#tribunais-superiores"><span>Recursos e Tribunais Superiores</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÁREAS DE ATUAÇÃO — VARIAÇÃO NEUMORPHISM (Walnut Noir · títulos Playfair) ===== -->
+<section class="section atuacao-neu areas-vitral" id="atuacao-neu">
+  <div class="areas-vitral__bg" data-parallax aria-hidden="true"></div>
+  <div class="row">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Onde nossa expertise faz diferença</p>
+      <h2>Nossas áreas de atuação</h2>
+    </div>
+    <div class="areas-neu-grid">
+      <a class="area-neu reveal" href="areas-de-atuacao.html#defesa-criminal"><span>Defesa Criminal</span></a>
+      <a class="area-neu reveal" style="transition-delay:40ms" href="areas-de-atuacao.html#vitimas-seguros"><span>Representação de Vítimas e Mercado de Seguros</span></a>
+      <a class="area-neu reveal" style="transition-delay:80ms" href="areas-de-atuacao.html#investigacoes-corporativas"><span>Investigações Corporativas</span></a>
+      <a class="area-neu reveal" style="transition-delay:120ms" href="areas-de-atuacao.html#compliance"><span>Compliance, Integridade e Consultoria Preventiva</span></a>
+      <a class="area-neu reveal" style="transition-delay:160ms" href="areas-de-atuacao.html#contencioso-administrativo"><span>Contencioso Administrativo Sancionador</span></a>
+      <a class="area-neu reveal" style="transition-delay:200ms" href="areas-de-atuacao.html#tribunais-superiores"><span>Recursos e Tribunais Superiores</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÁREAS DE ATUAÇÃO — VARIAÇÃO NEUMORPHISM (Walnut Noir · títulos Jost) ===== -->
+<section class="section atuacao-neu atuacao-neu--jost areas-vitral" id="atuacao-neu-jost">
+  <div class="areas-vitral__bg" data-parallax aria-hidden="true"></div>
+  <div class="row">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Onde nossa expertise faz diferença</p>
+      <h2>Nossas áreas de atuação</h2>
+    </div>
+    <div class="areas-neu-grid">
+      <a class="area-neu reveal" href="areas-de-atuacao.html#defesa-criminal"><span>Defesa Criminal</span></a>
+      <a class="area-neu reveal" style="transition-delay:40ms" href="areas-de-atuacao.html#vitimas-seguros"><span>Representação de Vítimas e Mercado de Seguros</span></a>
+      <a class="area-neu reveal" style="transition-delay:80ms" href="areas-de-atuacao.html#investigacoes-corporativas"><span>Investigações Corporativas</span></a>
+      <a class="area-neu reveal" style="transition-delay:120ms" href="areas-de-atuacao.html#compliance"><span>Compliance, Integridade e Consultoria Preventiva</span></a>
+      <a class="area-neu reveal" style="transition-delay:160ms" href="areas-de-atuacao.html#contencioso-administrativo"><span>Contencioso Administrativo Sancionador</span></a>
+      <a class="area-neu reveal" style="transition-delay:200ms" href="areas-de-atuacao.html#tribunais-superiores"><span>Recursos e Tribunais Superiores</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÁREAS DE ATUAÇÃO — VARIAÇÃO B (cartão encostado à direita) — OCULTA =====
+     Ocultada a pedido. Para reexibir ("voltar opção atuação retângulo encostado"),
+     basta descomentar este bloco.
+<section class="atuacao-feature atuacao-feature--bleed" id="atuacao-b">
+  <div class="atuacao-feature-bg" aria-hidden="true">
+    <img src="assets/img/Ambiente/zacarelli_sala2.jpg" alt="" data-parallax>
+  </div>
+  <div class="atuacao-feature-scrim" aria-hidden="true"></div>
+  <div class="row">
+    <div class="atuacao-card reveal">
+      <p class="eyebrow">Onde nossa expertise faz diferença</p>
+      <h2>Nossas áreas de atuação</h2>
+      <a class="btn btn-primary atuacao-card-cta" href="areas-de-atuacao.html">
+        <span class="cta-full">Confira nossas áreas de atuação</span>
+        <span class="cta-short">Áreas de atuação</span>
+      </a>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ===== NOSSA EQUIPE (foto, nome e cargo de cada sócio) ===== -->
+<section class="section team-teaser" id="equipe">
+  <div class="row">
+    <div class="section-head center reveal">
+      <h2>Nossa equipe</h2>
+      <p>Experiência, conhecimento técnico e atuação especializada reunidos em uma equipe comprometida com a excelência jurídica.</p>
+    </div>
+    <div class="team-slider">
+    <div class="team-track" id="teamTrack">
       <div class="team-card reveal">
         <div class="team-photo">
           <img src="assets/img/Perfil_Equipe/Aristides_Zacarelli_Neto.jpg" alt="Aristides Zacarelli Neto">
@@ -83,7 +232,7 @@
         <p class="role">Sócio</p>
         <h3>Aristides Zacarelli Neto</h3>
       </div>
-      <div class="team-card reveal" style="transition-delay:80ms">
+      <div class="team-card reveal" style="transition-delay:60ms">
         <div class="team-photo">
           <img src="assets/img/Perfil_Equipe/Gisele_Durazzo_Zacarelli.jpg" alt="Gisele Durazzo Zacarelli">
           <div class="team-social">
@@ -94,7 +243,7 @@
         <p class="role">Sócia</p>
         <h3>Gisele Durazzo Zacarelli</h3>
       </div>
-      <div class="team-card reveal" style="transition-delay:160ms">
+      <div class="team-card reveal" style="transition-delay:120ms">
         <div class="team-photo">
           <img src="assets/img/Perfil_Equipe/Adriano_Scattini.jpg" alt="Adriano Scattini">
           <div class="team-social">
@@ -105,7 +254,7 @@
         <p class="role">Líder de Equipe</p>
         <h3>Adriano Scattini</h3>
       </div>
-      <div class="team-card reveal">
+      <div class="team-card reveal" style="transition-delay:180ms">
         <div class="team-photo">
           <img src="assets/img/Perfil_Equipe/Victor_Rezende_Fernandes_de_Magalhaes.jpg" alt="Victor Rezende Fernandes de Magalhães">
           <div class="team-social">
@@ -116,7 +265,7 @@
         <p class="role">Líder de Equipe</p>
         <h3>Victor Rezende Fernandes de Magalhães</h3>
       </div>
-      <div class="team-card reveal" style="transition-delay:80ms">
+      <div class="team-card reveal" style="transition-delay:240ms">
         <div class="team-photo">
           <img src="assets/img/Perfil_Equipe/Danilo_Bacoccina_Cavalcante.jpg" alt="Danilo Bacoccina Cavalcante">
           <div class="team-social">
@@ -127,7 +276,7 @@
         <p class="role">Advogado</p>
         <h3>Danilo Bacoccina Cavalcante</h3>
       </div>
-      <div class="team-card reveal" style="transition-delay:160ms">
+      <div class="team-card reveal" style="transition-delay:300ms">
         <div class="team-photo">
           <img src="assets/img/Perfil_Equipe/Luigi_Durazzo_Zacarelli.jpg" alt="Luigi Durazzo Zacarelli">
           <div class="team-social">
@@ -138,7 +287,7 @@
         <p class="role">Advogado</p>
         <h3>Luigi Durazzo Zacarelli</h3>
       </div>
-      <div class="team-card reveal">
+      <div class="team-card reveal" style="transition-delay:360ms">
         <div class="team-photo">
           <img src="assets/img/Perfil_Equipe/Paulo_Matarezio_Filho.jpg" alt="Paulo Matarezio Filho">
           <div class="team-social">
@@ -149,7 +298,7 @@
         <p class="role">Advogado</p>
         <h3>Paulo Matarezio Filho</h3>
       </div>
-      <div class="team-card reveal" style="transition-delay:80ms">
+      <div class="team-card reveal" style="transition-delay:420ms">
         <div class="team-photo">
           <img src="assets/img/Perfil_Equipe/Pedro_Martins_de_Oliveira_Reis.jpg" alt="Pedro Martins de Oliveira Reis">
           <div class="team-social">
@@ -161,13 +310,110 @@
         <h3>Pedro Martins de Oliveira Reis</h3>
       </div>
     </div>
+    <div class="team-slider-controls">
+      <button class="team-nav prev" type="button" aria-label="Ver membros anteriores">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="team-nav next" type="button" aria-label="Ver próximos membros">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:48px">
+      <a class="btn btn-primary" href="equipe.html">Conheça os profissionais</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOTÍCIAS (placeholder — mescla de blog e mídia, masonry) ===== -->
+<section class="section" id="noticias">
+  <div class="row">
+    <div class="section-head reveal">
+      <p class="eyebrow">Notícias</p>
+      <h2>Conteúdo, análises e atualizações</h2>
+      <p>Acompanhe artigos, publicações e comentários sobre temas relevantes do Direito Penal, Direito Penal Econômico e atualidades jurídicas.</p>
+    </div>
+    <div class="news-masonry">
+      <div class="news-card reveal">
+        <div class="news-thumb" style="aspect-ratio:4/3">
+          <span class="news-tag news-tag--blog">Blog</span>
+          <img src="assets/img/logo-mark-color.png" alt="">
+        </div>
+        <div class="news-body">
+          <span class="news-date">Em breve</span>
+          <h3>Compliance penal: por que a prevenção é a melhor defesa</h3>
+          <p>Como programas de integridade bem estruturados reduzem a exposição de empresas e executivos a processos criminais.</p>
+          <span class="news-more">Leia mais</span>
+        </div>
+      </div>
+      <div class="news-card reveal" style="transition-delay:60ms">
+        <div class="news-thumb" style="aspect-ratio:1/1">
+          <span class="news-tag news-tag--midia">Mídia</span>
+          <img src="assets/img/logo-mark-color.png" alt="">
+        </div>
+        <div class="news-body">
+          <span class="news-date">Em breve</span>
+          <h3>Advocacia Zacarelli é destaque na Análise Advocacia 2025</h3>
+          <p>Reconhecimento entre os escritórios mais admirados do Brasil em Penal Empresarial e no setor de Seguros.</p>
+          <span class="news-more">Leia mais</span>
+        </div>
+      </div>
+      <div class="news-card reveal" style="transition-delay:120ms">
+        <div class="news-thumb" style="aspect-ratio:3/4">
+          <span class="news-tag news-tag--blog">Blog</span>
+          <img src="assets/img/logo-mark-color.png" alt="">
+        </div>
+        <div class="news-body">
+          <span class="news-date">Em breve</span>
+          <h3>Investigações internas: cuidados essenciais para empresas</h3>
+          <p>Boas práticas para conduzir apurações com independência, confidencialidade e segurança jurídica.</p>
+          <span class="news-more">Leia mais</span>
+        </div>
+      </div>
+      <div class="news-card reveal" style="transition-delay:60ms">
+        <div class="news-thumb" style="aspect-ratio:16/9">
+          <span class="news-tag news-tag--midia">Mídia</span>
+          <img src="assets/img/logo-mark-color.png" alt="">
+        </div>
+        <div class="news-body">
+          <span class="news-date">Em breve</span>
+          <h3>Sócio comenta a reforma do Código de Processo Penal</h3>
+          <p>Participação em veículo especializado sobre os impactos das mudanças legislativas para empresas.</p>
+          <span class="news-more">Leia mais</span>
+        </div>
+      </div>
+      <div class="news-card reveal" style="transition-delay:120ms">
+        <div class="news-thumb" style="aspect-ratio:4/3">
+          <span class="news-tag news-tag--blog">Blog</span>
+          <img src="assets/img/logo-mark-color.png" alt="">
+        </div>
+        <div class="news-body">
+          <span class="news-date">Em breve</span>
+          <h3>Recursos aos Tribunais Superiores: quando e como atuar</h3>
+          <p>Entenda as particularidades da atuação perante o STJ e o STF em casos de elevada complexidade.</p>
+          <span class="news-more">Leia mais</span>
+        </div>
+      </div>
+      <div class="news-card reveal" style="transition-delay:180ms">
+        <div class="news-thumb" style="aspect-ratio:1/1">
+          <span class="news-tag news-tag--midia">Mídia</span>
+          <img src="assets/img/logo-mark-color.png" alt="">
+        </div>
+        <div class="news-body">
+          <span class="news-date">Em breve</span>
+          <h3>Escritório participa de painel sobre Direito Penal Econômico</h3>
+          <p>Sócios discutem tendências e desafios da área em evento do setor jurídico.</p>
+          <span class="news-more">Leia mais</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===== CTA FINAL ===== -->
 <section class="cta dark">
   <div class="cta-bg" aria-hidden="true">
-    <img src="assets/img/Ambiente/zacarelli_sala1.jpg" alt="" data-parallax>
+    <img src="assets/img/Ambiente/zacarelli_detalhes_5.jpg" alt="" data-parallax>
   </div>
   <div class="row">
     <h2>Conte com uma assessoria especializada</h2>
@@ -219,6 +465,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260823g"></script>
+<script src="js/main.js?v=20260823f"></script>
 </body>
 </html>

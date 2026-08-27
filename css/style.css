@@ -531,6 +531,18 @@ footer li::before{content:"—";color:var(--secondary);margin-right:10px}
 .area-neu:hover span{color:#F8F1EA}
 /* V3: títulos em Jost, mais fina e com espaçamento mínimo */
 .atuacao-neu--jost .area-neu span{font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.2px}
+/* Variação escolhida na home: foto de fundo (parallax) + gradiente atual
+   como overlay translúcido sobre ela (URL inline no HTML para resolver
+   relativo ao documento). */
+.atuacao-neu--photo .areas-vitral__photo{position:absolute;left:0;right:0;top:-22%;height:144%;z-index:0;pointer-events:none;will-change:transform;background-position:center;background-size:cover;background-repeat:no-repeat}
+.atuacao-neu--photo .areas-vitral__bg{z-index:1;top:0;height:100%;
+  background:
+    radial-gradient(at 12% 15%, rgba(206,184,155,0.22) 0%, transparent 46%),
+    radial-gradient(at 88% 8%,  rgba(91,66,56,0.50)  0%, transparent 50%),
+    radial-gradient(at 78% 88%, rgba(104,93,99,0.50) 0%, transparent 55%),
+    radial-gradient(at 8% 92%,  rgba(60,43,37,0.62)  0%, transparent 55%),
+    radial-gradient(at 50% 45%, rgba(30,24,23,0.34)  0%, transparent 60%),
+    linear-gradient(165deg, rgba(30,24,23,0.82) 0%, rgba(42,33,31,0.68) 45%, rgba(30,24,23,0.82) 100%)}
 @media(max-width:900px){.areas-neu-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){
   .areas-neu-grid{grid-template-columns:1fr}
