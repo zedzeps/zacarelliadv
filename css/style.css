@@ -147,22 +147,35 @@ header.is-open .drawer{max-height:360px}
 .hero__grain{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:.045;mix-blend-mode:overlay;background-image:url("../assets/img/noise.png");background-size:120px 120px}
 .hero__content{position:relative;z-index:6;width:100%;align-self:flex-end;padding-top:clamp(52px,10vw,120px);padding-bottom:clamp(56px,8vw,96px)}
 .hero--inner .hero__content{padding-top:clamp(90px,12vw,150px);padding-bottom:clamp(40px,5vw,64px)}
-/* Banner Equipe: gradiente mesh escuro, mais baixo, "Equipe" à esquerda com
-   grafismo dourado acima. */
-.hero--mesh{min-height:min(48vh,440px)}
-.hero--mesh .hero__content{align-self:center}
-.hero--mesh .hero__meshbg{position:absolute;inset:0;z-index:0;pointer-events:none;
+/* Banner Equipe — gradiente mesh escuro. Base compartilhada + duas variações:
+   (mesh) só o título à esquerda / (split) título à esquerda + foto inteira à direita. */
+.hero__meshbg{position:absolute;inset:0;z-index:0;pointer-events:none;
   background:
     radial-gradient(at 16% 22%, rgba(206,184,155,0.16) 0%, transparent 44%),
     radial-gradient(at 86% 12%, rgba(91,66,56,0.40) 0%, transparent 50%),
     radial-gradient(at 82% 90%, rgba(104,93,99,0.32) 0%, transparent 55%),
     radial-gradient(at 8% 92%,  rgba(60,43,37,0.52) 0%, transparent 55%),
     linear-gradient(160deg, #16100E 0%, #241A17 48%, #16100E 100%)}
-.hero--mesh h1{color:#fff;font-size:clamp(40px,6vw,84px)}
-.hero--mesh .hero__mark{display:block;height:2px;width:64px;margin:0 0 22px;border-radius:2px;transform-origin:left center;
+.hero__mark{display:block;height:2px;width:64px;margin:0 0 22px;border-radius:2px;transform-origin:left center;
   background:linear-gradient(90deg,var(--secondary),rgba(206,184,155,.15))}
+.hero--mesh h1,.hero--split h1{color:#fff}
+/* variação: banner baixo, só o título à esquerda */
+.hero--mesh{min-height:min(48vh,440px)}
+.hero--mesh .hero__content{align-self:center}
+.hero--mesh h1{font-size:clamp(40px,6vw,84px)}
+/* variação: split — título à esquerda, foto da equipe inteira à direita (sem cortes) */
+.hero--split{min-height:min(60vh,520px)}
+.hero--split .hero__splitrow{display:grid;grid-template-columns:0.9fr 1.18fr;gap:clamp(28px,4vw,64px);align-items:center;width:100%;position:relative;z-index:2;
+  padding-top:calc(var(--header-h) + clamp(10px,3vw,40px));padding-bottom:clamp(20px,3vw,40px)}
+.hero--split .hero__splitcopy h1{font-size:clamp(40px,6vw,88px)}
+.hero--split .hero__splitphoto{display:flex;align-items:center;justify-content:center}
+.hero--split .hero__splitphoto img{width:100%;height:auto;max-height:min(58vh,460px);object-fit:contain;border-radius:var(--radius-lg);box-shadow:0 24px 54px rgba(10,7,6,.42)}
+@media(max-width:820px){
+  .hero--split{min-height:0}
+  .hero--split .hero__splitrow{grid-template-columns:1fr;gap:22px;padding-bottom:16px}
+}
 
-/* Foto da equipe na seção seguinte (grupo) */
+/* Foto da equipe na seção seguinte (grupo) — usada na variação sem foto no banner */
 .team-hero-photo{margin:0 0 clamp(30px,4vw,52px);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 24px 54px var(--shadow)}
 .team-hero-photo img{width:100%;height:auto;display:block}
 .hero .eyebrow{color:var(--secondary)}
